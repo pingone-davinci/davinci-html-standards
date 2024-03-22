@@ -1,0 +1,33 @@
+.test-panel {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out,
+    border-color 0.1s ease-out;
+}
+
+.test-panel:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.panel-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 1.25rem;
+  border-top-left-radius: calc(0.5rem - 1px);
+  border-top-right-radius: calc(0.5rem - 1px);
+}
+
+.panel-body {
+  padding: 1.25rem;
+  height: 80px;
+}
+
+.panel-footer {
+  padding: 0.75rem 1.25rem;
+  border-bottom-right-radius: calc(0.5rem - 1px);
+  border-bottom-left-radius: calc(0.5rem - 1px);
+  text-align: right;
+  background-color: transparent; /* Background color removed for a cleaner look */
+}

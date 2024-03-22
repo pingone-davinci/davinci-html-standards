@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <title>PingOne Agreement Form</title>
+    <link rel="stylesheet" href="https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css">
+    <link rel="stylesheet" href="https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css">
+    <link rel="stylesheet" href="resources/style.css">
+
+    <script src="resources/scripts.js"></script>
+
+    <script>
+        const start = () => {
+            setFavicon();
+            createBackButton();
+            setFieldFocus("streetAddress");
+            generateRandomText("agreementTextDiv");
+        }
+    </script>
+</head>
+
+<body onload="start()">
+    <div class="end-user-nano">
+        <div
+            class="bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto">
+            <div class="mh-100" style="width:500px">
+                <div class="card shadow mb-5">
+                    <main aria-labelledby="title">
+                        <div class="card-body p-5 d-flex flex-column">
+                            <img class="companyLogo align-self-center mb-5"
+                                src="https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+                                alt="Logo of Ping Identity" />
+
+                            <h1 id="title" class="text-center mb-4">End User Agreement</h1>
+
+                            <p class="text-muted text-center">Please review and accept the agreement before proceeding</p>
+
+                            <!-- Generic Error Message -->
+                            <p id="feedback" data-id="feedback" class="text-danger mdi mdi-alert-circle"
+                                data-skcomponent="skerror"></p>
+                            <div class="border overflow-auto" style="max-height: 300px" data-id="textblock">
+                                <div id="agreementTextDiv" class="p-3" style="white-space: pre-wrap" tabindex="0"
+                                    role="document">
+                                </div>
+                            </div>
+                            <form id='agreementForm' data-id="agreementForm">
+                                <div class="mt-4 form-check d-flex justify-content-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="agreeCheckBox"
+                                        aria-describedby="agreeCheckBoxLabel">
+                                    <label id="agreeCheckBoxLabel" class="form-check-label ms-3 fs-5"
+                                        for="agreeCheckBox">
+                                        I have read and agree to the terms and conditions.
+                                    </label>
+                                </div>
+                                <div class="d-flex flex-column mt-4">
+                                    <button id="acceptBtn" data-id="accept-button" type="accept"
+                                        data-skcomponent="skbutton" data-skbuttontype="form-submit"
+                                        data-skrequiredinputs="agreeCheckBox" data-skform="agreementForm"
+                                        data-skbuttonvalue="ACCEPT" class="btn btn-primary mb-3">
+                                        Accept
+                                    </button>
+                                    <button id="declineBtn" data-id="decline-button" type="" data-skcomponent="skbutton"
+                                        data-skbuttontype="form-submit" data-skform="agreementForm"
+                                        data-skbuttonvalue="DECLINE" class="btn btn-link">
+                                        Decline
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

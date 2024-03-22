@@ -1,0 +1,23 @@
+/* FORM STYLE */
+.companyLogo {
+  height: 65px;
+}
+
+p.text-danger {
+  display: none;
+}
+
+.back-button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}

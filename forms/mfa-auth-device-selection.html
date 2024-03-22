@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+  <title>MFA Device Selection</title>
+  <link rel="stylesheet" href="https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css">
+  <link rel="stylesheet" href="https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css">
+  <link rel="stylesheet" href="resources/style.css">
+
+  <script src="resources/scripts.js"></script>
+
+  <script>
+    const start = () => {
+      createBackButton();
+      setFavicon();
+    }
+  </script>
+</head>
+
+<body onload="start()">
+
+  <div
+    class="bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto">
+    <div class="mh-100" style="max-width: 400px; width: 100%;">
+      <div class="card shadow mb-5">
+        <main aria-labelledby="title">
+          <div class="card-body p-5 d-flex flex-column">
+            <img class="companyLogo align-self-center mb-5"
+              src="https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+              alt="Logo of Ping Identity" />
+            <h1 id="title" class="text-center mb-4">Select Authentication Method</h1>
+
+            <p class="text-danger mdi mdi-alert-circle text-center" data-id="feedback" data-skcomponent="skerror"
+              aria-live="assertive"></p>
+
+            <form id="method-selection" data-id="method-selection">
+              <div class="d-flex flex-column gap-4 mb-4">
+
+                <button class="btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4"
+                  id="mfa-type-list-button-EMAIL-{{id}}" data-skcomponent="skbutton" data-skbuttontype="next-event"
+                  data-skbuttonvalue="{{id}}" type="button">
+                  <div class="flex-grow-1 d-flex align-items-center gap-4">
+                    <i class="mdi mdi-email-outline text-dark fs-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-column text-start gap-1">
+                      <div class="fw-semibold text-primary">
+                        Email
+                      </div>
+                      <div class="fs-5 text-secondary" id="emailContainer">
+                        g***********1@pingidentity.com
+                      </div>
+                    </div>
+                  </div>
+                </button>
+
+                <button class="btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4"
+                  id="mfa-type-list-button-SMS-{{id}}" data-skcomponent="skbutton" data-skbuttontype="next-event"
+                  data-skbuttonvalue="{{id}}" type="button">
+                  <div class="flex-grow-1 d-flex align-items-center gap-4">
+                    <i class="mdi mdi-comment-text-outline text-dark fs-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-column text-start gap-1">
+                      <div class="fw-semibold text-primary">
+                        Text Message
+                      </div>
+                      <div class="fs-5 text-secondary" id="phoneContainer">
+                        ***-***-3252
+                      </div>
+                    </div>
+                  </div>
+                </button>
+
+                <button class="btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4"
+                  id="mfa-type-list-button-FIDO2-{{id}}" data-skcomponent="skbutton" data-skbuttontype="next-event"
+                  data-skbuttonvalue="{{id}}" type="button">
+                  <div class="flex-grow-1 d-flex align-items-center gap-4">
+                    <i class="mdi mdi-account-key-outline text-dark fs-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-column text-start gap-1">
+                      <div class="fw-semibold text-primary">
+                        Passkey
+                      </div>
+                      <div class="fs-5 text-secondary">
+                        Use device passkey to authenticate.
+                      </div>
+                    </div>
+                  </div>
+                </button>
+
+                <button class="btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4"
+                  data-skbuttontype="next-event" data-skcomponent="skbutton" data-skbuttonvalue="{{id}}"
+                  id="mfa-type-list-button-VOICE-{{id}}" type="button">
+                  <div class="flex-grow-1 d-flex align-items-center gap-4">
+                    <i class="mdi mdi-face-agent text-dark fs-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-column text-start gap-1">
+                      <div class="fw-semibold text-primary">Voice</div>
+                      <div class="fs-5 text-secondary">Receive a phone call with a passcode to authenticate.</div>
+                    </div>
+                  </div>
+                </button>
+
+                <button class="btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4" id="mfa-type-list-button-TOTP-{{id}}"
+                  data-skcomponent="skbutton" data-skbuttontype="next-event" data-skbuttonvalue="{{id}}">
+                  <div class="flex-grow-1 d-flex align-items-center gap-4">
+                    <i class="mdi mdi-cellphone-key text-dark fs-2" aria-hidden="true"></i>
+                    <div class="d-flex flex-column text-start gap-1">
+                      <div class="fw-semibold text-primary">
+                        Authenticator App
+                      </div>
+                      <div class="fs-5 text-secondary">
+                        Use an authenticator app to authenticate.
+                      </div>
+                    </div>
+                  </div>
+                </button>
+
+                <div class="d-flex flex-column">
+                  <button id="cancel" class="btn btn-link" data-skcomponent="skbutton" data-skbuttontype="next-event"
+                    data-skform="otp-form" data-skbuttonvalue="CANCEL">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
